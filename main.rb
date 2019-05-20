@@ -4,11 +4,15 @@ require 'sinatra/reloader' if development?
 class ApplicationController < Sinatra::Base
 
 	configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
+    set :public_folder, './public'
+    set :views, './views'
     enable :sessions
     set :session_secret, 'password_security'
-  end
+    end
+
+    get '/styles.css' do 
+        scss :styles
+    end
 
 	get '/' do
 		erb :index

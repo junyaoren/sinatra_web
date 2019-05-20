@@ -5,12 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Junyao's Website</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        
     </head>
     <body>
 
-        <img src="images/students3.png" id = "website_header" style="width: 60%">
-
+        <img src="images/students3.png" style="float: left; width: 55%; margin-right: 5%; margin-top: 2em">
+        <img src="images/Student_Info_Sys.png" style="float: right; width: 30%; margin-bottom: 2em; margin-top: 2em">
+        <p style="clear: both;">
 
 
 
@@ -21,10 +23,12 @@
                 <div class="container-fluid">
                     <div class="container">
                         <ul class="nav navbar-nav">
-                            <li><a href="/" class="navbar-brand">Favorite Places</a></li>
-                            <li><a href="/places">All Places</a></li>
-                            <li><a href="/users/<%= current_user.slug %>">My Places</a></li>
-                            <li><a href="/places/new">Create Place</a></li>
+                            <li><a href="/" class="navbar-brand">Home</a></li>
+                            <li><a href="/places">About</a></li>
+                            <li><a href="/users/">Contact</a></li>
+                            <li><a href="/places/new">Students</a></li>
+                            <li><a href="/places/new">Comments</a></li>
+                            <li><a href="/places/new">Video</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>
@@ -37,11 +41,13 @@
                 <div class="container-fluid">
                     <div class="container">
                         <ul class="nav navbar-nav">
-                            <li><a href="/" class="navbar-brand">Favorite Places</a></li>
-                            <li><a href="/places">All Places</a></li>
-                            <li><a href="/users/">My Places</a></li>
-                            <li><a href="/places/new">Create Place</a></li>
-                            <li><a href="/login">Logout</a></li>
+                            <li><a href="/" class="navbar-brand">Home</a></li>
+                            <li><a href="/places">About  </a></li>
+                            <li><a href="/users/">Contact  </a></li>
+                            <li><a href="/places/new">Students  </a></li>
+                            <li><a href="/places/new">Comments  </a></li>
+                            <li><a href="/places/new">Video  </a></li>
+                            <li><a href="/logout">Login  </a></li>
                         </ul>
                     </div>
                 </div>
