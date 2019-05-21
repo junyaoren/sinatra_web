@@ -62,13 +62,3 @@ get '/logout' do
     redirect "/login"
 
 end
-
-get '/users/:slug' do
-    authenticate_user
-    @user = User.find_by_slug(params[:slug])
-    if @user.id == current_user.id
-        erb :'/users/index'
-    else
-        redirect "/places/index"
-    end
-end

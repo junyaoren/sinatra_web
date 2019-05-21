@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sass'
-require_relative './user'
+require_relative 'user'
+require_relative 'comment'
 require 'sinatra/reloader' if development?
 
 

@@ -1,0 +1,10 @@
+<h2>These Are All the Current Comments:</h2>
+
+<% comments = Comment.all %>
+<% comments.each do |comment| %>
+  <h4 style="display:inline;">Title: <a href="/comments/<%= comment.id %>"><%= comment.title %></a></h4> <p style="display:inline;">Created by: <%= comment.username %>, at <%= comment.created_at %></p>
+  <p></p>
+
+<% end %>
+
+
