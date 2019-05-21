@@ -54,6 +54,10 @@ get '/comments/:id' do
   erb :'/comments/show'
 end
 
+get '/comments/new' do
+  erb :'/comments/new'
+end
+
 
 
 
