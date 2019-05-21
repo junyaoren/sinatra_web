@@ -1,2 +1,3 @@
 
-<h2 class="text-center">Hi, <%= session[:user_id] %>, welcome to Student Information System</h2>
+<h2 class="text-center">Hi, <%= session[:user_id] || "stranger" %>, welcome to Student Information System</h2>
+<h2> <%=  "You can login or signup" unless session[:user_id]%>

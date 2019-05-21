@@ -52,7 +52,7 @@ post '/login' do
         session[:user_id] = user.username
         redirect "/"
     else
-        session[:message] = "That didn't work... Try logging in again or sign up if you don't have an account yet."
+        session[:message] = "Username/password you entered doesn't match! Try again or sign up."
         redirect "/login"
     end
 end
