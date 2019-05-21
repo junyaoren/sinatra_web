@@ -16,3 +16,18 @@ edit
 delets
 show_all
 show_one
+
+
+
+
+Questions:
+
+必须是下面这个顺序？如果反过来，‘new' 会被当成 ':id' 传进去，导致nil 错误！
+get '/comments/new' do
+  erb :'/comments/new'
+end
+
+get '/comments/:id' do
+  @comment = Comment.first(:id => params[:id])
+  erb :'/comments/show'
+end

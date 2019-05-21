@@ -49,14 +49,16 @@ get '/comments' do
   erb :'/comments/index'
 end
 
+get '/comments/new' do
+  erb :'/comments/new'
+end
+
 get '/comments/:id' do
   @comment = Comment.first(:id => params[:id])
   erb :'/comments/show'
 end
 
-get '/comments/new' do
-  erb :'/comments/new'
-end
+
 
 
 
