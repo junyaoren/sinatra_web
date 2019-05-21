@@ -2,6 +2,7 @@ require 'dm-core'
 require 'dm-migrations'
 require 'dm-validations'
 require 'sinatra'
+#require 'data_mapper'
 
 DataMapper::Logger.new($stdout, :debug)
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
@@ -47,7 +48,7 @@ end
 
 post '/login' do
     user = User.first(:username => params[:username])
-    if user && user.authenticate(params[:password])
+    if user && user.password == params[:password]
         session[:user_id] = user.username
         redirect "/"
     else
