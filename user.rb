@@ -2,10 +2,16 @@ require 'dm-core'
 require 'dm-migrations'
 require 'dm-validations'
 require 'sinatra'
-require_relative 'main'
+#require_relative 'main'
 
 #require 'data_mapper'
+configure :development, :test do 
+  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+end
 
+configure :production do 
+  DataMapper.setup(:default,ENV['DATABASE_URL']) 
+end
 
 
 class User
