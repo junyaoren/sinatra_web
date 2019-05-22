@@ -1,1 +1,16 @@
-<h2>this is the student page</h2>
+<p></p>
+<h3 style="display: inline;">Here Are All the Currently Registered Students:</h3> <h3 style="display: inline;"><a href="/students/new">register new</a></h3>
+<p></p>
+
+
+<% students = Student.all %>
+<% students.each do |student| %>
+  <h4 style="display:inline-block; width: 200px; height: 1px"><a href="/students/<%= student.id %>"><%= student.student_id %> <%= student.firstname %> <%= student.lastname %> </a></h4> 
+  <h4 style="display: inline;">registered at: <%= student.created_at %></h4> 
+  <p></p>
+
+<% end %>
+
+
+
+

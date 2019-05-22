@@ -10,14 +10,15 @@ DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 class Student
   include DataMapper::Resource
   property :id, Serial
-
-  property :username, String, :required => true, :unique => true
-  validates_uniqueness_of :username
-  #:message => "The username is taken."
-
-  property :password, String, :required => true
-  validates_length_of :password, :min => 5
-  #:message => "The password is too short: at least 5 characters."
+  property :student_id, String
+  property :firstname, String, :required => true
+  property :lastname, String, :required => true
+  property :birthday, Date, :required => true
+  property :address, String
+  property :major, String
+  property :personality, String
+  property :notes, Text
+  property :created_at, DateTime
 end
 
 
@@ -25,6 +26,5 @@ DataMapper.finalize
 DataMapper.auto_migrate!
 
 get '/students' do
-    @message = session.delete(:message)
     erb :'/students/index'
 end
