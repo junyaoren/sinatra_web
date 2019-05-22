@@ -7,8 +7,17 @@
 <% students.each do |student| %>
   <h4 style="display:inline-block; width: 200px; height: 1px"><a href="/students/<%= student.id %>"><%= student.student_id %> <%= student.firstname %> <%= student.lastname %> </a></h4> 
   <h4 style="display: inline;">registered at: <%= student.created_at %></h4> 
-  <p></p>
 
+  <form action="/students/<%= student.id %>" method="post" style = "display: inline;">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <button type="submit" class="btn btn-primary">Delete</button>
+  </form>
+
+  <form action="/students/<%= student.id %>/edit" method="get" style = "display: inline;">
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+
+  <p></p>
 <% end %>
 
 

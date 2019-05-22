@@ -23,8 +23,8 @@ student_seeds = [['W1234', 'Junyao', 'Ren', Date.new(1990, 7, 14), '1921 Maple A
                  ['W1235', 'Xiaohong', 'Li', Date.new(1988, 5, 6), '5402 Junewood Ave., San Jose, CA, USA', 'Computer Science', 'pretty', 'won a prize'],
                  ['W1239', 'Guo', 'Yang', Date.new(1993, 12, 3), '200 Inwood Ave., San Jose, CA, USA', 'Art', 'humor', 'N/A'],
                  ['W1243', 'Jing', 'Guo', Date.new(1992, 2, 13), '404 Hampton Ave., Santa Clara, CA, USA', 'Socioloty', 'serious', 'N/A'],
-                 ['W1239', 'Wantong', 'Lao', Date.new(1993, 12, 3), '2009 Siping Rd., Guang Zhou, Guang Dong, China', 'Math', 'happy', 'N/A'],
-                 ['W1239', 'Wuji', 'Zhang', Date.new(1993, 12, 3), '500 Lexi Rd., Shanghai, Shanghai, China', 'Neurology', 'sad', 'great guy'],
+                 ['W12333', 'Wantong', 'Lao', Date.new(1993, 12, 3), '2009 Siping Rd., Guang Zhou, Guang Dong, China', 'Math', 'happy', 'N/A'],
+                 ['W1231', 'Wuji', 'Zhang', Date.new(1993, 12, 3), '500 Lexi Rd., Shanghai, Shanghai, China', 'Neurology', 'sad', 'great guy '],
                 ]
 
 student_seeds.each_with_index do |cur, index|

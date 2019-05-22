@@ -49,8 +49,8 @@ post '/comments' do
 end
 
 get '/comments/new' do
-  @title = session[:comment_title]
-  @content = session[:comment_content]
+  @title = session.delete(:comment_title)
+  @content = session.delete(:comment_content)
   @message = session.delete(:message)
 
   erb :'/comments/new'

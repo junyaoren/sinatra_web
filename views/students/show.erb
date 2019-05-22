@@ -1,0 +1,31 @@
+<h1>Student Information</h1>
+<h2 style="display: inline;"><%= @student.firstname %> <%= @student.lastname %></h2>
+<p style="display: inline;">Registered at: <%= @student.created_at %></p>
+<p></p>
+
+<h3 style="display: inline-block; height: 0px; width: 150px">Student_ID: </h3> <h3 style="display: inline;"><%= @student.student_id %></h3>
+<p></p>
+<h3 style="display: inline-block; height: 0px; width: 150px">Birthday: </h3> <h3 style="display: inline;"><%= @student.birthday %></h3>
+<p></p>
+<h3 style="display: inline-block; height: 0px; width: 150px">Address: </h3> <h3 style="display: inline;"><%= @student.address %></h3>
+<p></p>
+<h3 style="display: inline-block; height: 0px; width: 150px">Major: </h3> <h3 style="display: inline;"><%= @student.major %></h3>
+<p></p>
+<h3 style="display: inline-block; height: 0px; width: 150px">Personality: </h3> <h3 style="display: inline;"><%= @student.personality %></h3>
+<p></p>
+<h3 style="display: inline-block; height: 0px; width: 150px">Notes: </h3> <h3 style="display: inline;"><%= @student.notes %></h3>
+<p></p>
+
+
+
+<form action="/students/<%= @student.id %>/edit" method="get">
+    <button type="submit" class="btn btn-primary">Edit Information</button>
+</form>
+
+<p></p>
+
+<form action="/students/<%= @student.id %>" method="post">
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <button type="submit" class="btn btn-primary">Delete Student</button>
+</form>
+

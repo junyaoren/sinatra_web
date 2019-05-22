@@ -1,0 +1,48 @@
+<h1>Register new students here!</h1>
+
+<% if @message %>
+<div class="alert alert-info">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <%= @message %>
+</div>
+<% end %>
+<p></p>
+<p></p>
+
+
+<form action="/students" method="post">
+
+    <div class="form-group">
+        <label>Student ID</label>
+        <input type="text" size="70" name="student_id" value="<%= @unfinished[:student_id] %>">
+        <p></p>
+        <label>First Name</label>
+        <input type="text" size="70" name="firstname" value="<%= @unfinished[:firstname] %>">
+        <p></p>
+        <label>Last Name</label>
+        <input type="text" size="70" name="lastname" value="<%= @unfinished[:lastname] %>">
+        <p></p>
+        <label>Birthday</label>
+        <input type="date" size="70" name="birthday" value="<%= @unfinished[:birthday] || Date.new(1990,1,1) %>">
+        <p></p>
+        <label>Address</label>
+        <input type="text" size="70" name="address" value="<%= @unfinished[:address] %>">
+        <p></p>
+
+        <label>major</label>
+        <input type="text" size="70" name="major" value="<%= @unfinished[:major] %>">
+        <p></p>
+
+        <label>personality</label>
+        <input type="text" size="70" name="personality" value="<%= @unfinished[:personality] %>">
+        <p></p>
+
+        <label>notes</label>
+        <textarea type="text" rows="5" cols="70" name="notes"><%= @unfinished[:notes] %></textarea>
+        <p></p>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Register Student</button>
+</form>
