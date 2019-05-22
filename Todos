@@ -1,21 +1,15 @@
 #Todos
 
-create page for comments 
-
-
-
-
-
 
 all function with students:
 create model
 
 create views for:
-create(new)
-edit
+create(new) 'students/new'
+edit 'students/new'
 delets
-show_all
-show_one
+show_all  -> index page '/students'
+show_one  -> show page '/students/:id'
 
 
 
