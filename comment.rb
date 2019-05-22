@@ -17,6 +17,7 @@ class Comment
   property :username, String, :required => true
 
   property :title, String, :required => true
+  validates_length_of :title, :min => 1
   
   property :content, Text, :required => true
   validates_length_of :content, :min => 10
@@ -49,7 +50,26 @@ get '/comments' do
   erb :'/comments/index'
 end
 
+post '/comments' do
+  @comment = Comment.new(params)
+  @comment.username = session[:user_id] || "stranger"
+  if @comment.save
+    redirect "/comments/#{@comment.id}"
+    #@comment = nil
+  else
+    session[:message] = @comment.errors.on(:content)[0] if @comment.errors.on(:content)
+    session[:message] = @comment.errors.on(:title)[0] if @comment.errors.on(:title)
+    session[:comment_title] = @comment.title
+    session[:comment_content] = @comment.content
+    redirect "/comments/new"
+  end
+end
+
 get '/comments/new' do
+  @title = session[:comment_title]
+  @content = session[:comment_content]
+  @message = session.delete(:message)
+
   erb :'/comments/new'
 end
 
