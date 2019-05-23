@@ -1,10 +1,22 @@
 require 'sinatra'
+require 'sinatra/reloader' if development?
 require 'sass'
+
+configure :development, :test do 
+  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+end
+
+configure :production do 
+  DataMapper.setup(:default,ENV['DATABASE_URL']) 
+end
+
+
+
 require_relative 'user'
 require_relative 'student'
 require_relative 'comment'
 require_relative 'database_seed'
-require 'sinatra/reloader' if development?
+
 
 
 
