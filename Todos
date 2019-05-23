@@ -1,20 +1,10 @@
 #Todos
 
 
-all function with students:
-create model
-
-create views for:
-create(new) 'students/new'
-edit 'students/new'
-delets
-show_all  -> index page '/students'
-show_one  -> show page '/students/:id'
-
-
-
 
 Questions:
+
+在production环境下(heroku),如果改动代码,重新commit,原有的数据库数据会丢失吗?
 
 必须是下面这个顺序？如果反过来，‘new' 会被当成 ':id' 传进去，导致nil 错误！
 get '/comments/new' do
